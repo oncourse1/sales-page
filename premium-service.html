@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>غرس يبنيها لك | خدمة البناء الكامل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@400;500;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16261c;
+    --ink-2:#e3f0e6;
+    --ink-3:#d8eadd;
+    --gold:#1f5c42;
+    --gold-light:#2f7a56;
+    --emerald:#b8934a;
+    --emerald-light:#9c7a3c;
+    --ivory:#faf8f2;
+    --ivory-dim:#5a6a5f;
+    --card:#ffffff;
+    --border:rgba(31,92,66,0.18);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    font-family:'IBM Plex Sans Arabic', sans-serif;
+    color:var(--ink);
+    line-height:1.75;
+  }
+  .wrap{ max-width:900px; margin:0 auto; padding:0 28px; }
+  h1,h2,h3{ font-family:'Tajawal', sans-serif; }
+  .font-amiri{ font-family:'Amiri', serif; }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:24px 0;
+    border-bottom:1px solid rgba(31,92,66,0.08);
+  }
+  .brand{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:18px; color:var(--gold-light); }
+  .brand svg{ width:24px; height:24px; }
+  .brand span{ font-family:'Amiri', serif; font-style:italic; }
+  .back-link{ font-family:'Tajawal', sans-serif; font-weight:700; font-size:13.5px; color:var(--ivory-dim); text-decoration:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:70px 0 50px;
+    text-align:center;
+    background:
+      radial-gradient(90% 60% at 50% 0%, rgba(31,92,66,0.14), transparent 60%),
+      radial-gradient(70% 50% at 15% 100%, rgba(184,147,74,0.14), transparent 60%);
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Tajawal', sans-serif; font-weight:700; font-size:14px;
+    color:var(--gold-light);
+    background:rgba(31,92,66,0.10);
+    border:1px solid var(--border);
+    padding:8px 20px; border-radius:999px;
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-weight:900; font-size:42px; line-height:1.35; color:var(--ink);
+    max-width:680px; margin:0 auto;
+  }
+  .hero h1 .accent{ color:var(--gold-light); }
+  .hero .sub{
+    margin-top:20px; font-size:17px; color:var(--ivory-dim); max-width:560px;
+    margin-left:auto; margin-right:auto;
+  }
+
+  .slots-note{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:26px;
+    font-family:'Tajawal', sans-serif; font-weight:700; font-size:13px;
+    color:var(--emerald-light);
+    background:rgba(184,147,74,0.10);
+    border:1px solid rgba(184,147,74,0.3);
+    padding:8px 18px; border-radius:999px;
+  }
+
+  .price-row{
+    margin-top:32px;
+    display:flex; align-items:baseline; justify-content:center; gap:14px; direction:ltr;
+  }
+  .price-row .price{
+    font-family:'Tajawal', sans-serif; font-weight:900; font-size:52px;
+    background:linear-gradient(180deg, var(--gold-light), var(--gold));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .price-row .price-unit{ direction:rtl; font-size:15px; color:var(--ivory-dim); }
+
+  .cta-btn{
+    display:inline-block; margin-top:28px;
+    font-family:'Tajawal', sans-serif; font-weight:800; font-size:17px;
+    background:linear-gradient(180deg, var(--gold-light), var(--gold));
+    color:#ffffff; padding:17px 44px; border-radius:10px;
+    text-decoration:none;
+    box-shadow:0 14px 34px -12px rgba(31,92,66,0.5);
+  }
+  .cta-note{ margin-top:14px; font-size:13px; color:var(--ivory-dim); opacity:0.8; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:56px 0; }
+  .section-title{
+    text-align:center; font-weight:800; font-size:28px; margin-bottom:10px; color:var(--ink);
+  }
+  .section-sub{
+    text-align:center; color:var(--ivory-dim); font-size:15px; max-width:520px; margin:0 auto 40px;
+  }
+
+  /* ---------- FOR WHOM ---------- */
+  .who-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:700px){ .who-grid{ grid-template-columns:1fr; } }
+  .who-card{
+    background:var(--card); border:1px solid rgba(31,92,66,0.08); border-radius:14px; padding:26px 24px;
+  }
+  .who-card.yes{ border-color:rgba(31,92,66,0.3); }
+  .who-card.no{ border-color:rgba(31,92,66,0.06); }
+  .who-card h3{ font-size:16px; margin-bottom:14px; }
+  .who-card.yes h3{ color:var(--gold-light); }
+  .who-card.no h3{ color:var(--ivory-dim); }
+  .who-card ul{ list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .who-card li{ font-size:14.5px; color:var(--ivory-dim); display:flex; gap:10px; align-items:flex-start; }
+  .who-card.yes li span{ color:var(--gold-light); }
+  .who-card.no li span{ color:var(--ivory-dim); }
+
+  /* ---------- WHAT'S INCLUDED ---------- */
+  .includes{ display:flex; flex-direction:column; gap:16px; }
+  .include-item{
+    display:flex; gap:18px; align-items:flex-start;
+    background:var(--card); border:1px solid rgba(31,92,66,0.08);
+    border-radius:14px; padding:24px 26px;
+  }
+  .include-icon{
+    width:44px; height:44px; border-radius:12px; flex-shrink:0;
+    background:rgba(31,92,66,0.12); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; font-size:20px;
+  }
+  .include-item h3{ font-size:16.5px; color:var(--ink); margin-bottom:6px; }
+  .include-item p{ font-size:14px; color:var(--ivory-dim); line-height:1.7; }
+
+  /* ---------- PROCESS ---------- */
+  .process{ display:flex; flex-direction:column; gap:0; }
+  .process-step{
+    display:flex; gap:22px; padding:24px 0;
+    border-bottom:1px solid rgba(31,92,66,0.06);
+  }
+  .process-step:last-child{ border-bottom:none; }
+  .process-num{
+    font-family:'Tajawal', sans-serif; font-weight:900; font-size:20px;
+    color:var(--gold-light);
+    background:rgba(31,92,66,0.1); border:1px solid var(--border);
+    width:44px; height:44px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .process-step h3{ font-size:17px; color:var(--ink); margin-bottom:6px; }
+  .process-step p{ font-size:14.5px; color:var(--ivory-dim); }
+
+  /* ---------- FAQ ---------- */
+  .faq-item{
+    border-bottom:1px solid rgba(31,92,66,0.08);
+    padding:22px 0;
+  }
+  .faq-item h3{ font-size:16px; color:var(--ink); margin-bottom:10px; }
+  .faq-item p{ font-size:14.5px; color:var(--ivory-dim); line-height:1.75; }
+
+  /* ---------- FINAL CTA ---------- */
+  .final{
+    text-align:center; border-top:1px solid rgba(31,92,66,0.08);
+  }
+  .final h2{ font-size:30px; font-weight:900; margin-bottom:14px; }
+  .final .sub{ color:var(--ivory-dim); margin-bottom:8px; max-width:500px; margin-left:auto; margin-right:auto; }
+
+  footer{
+    text-align:center; padding:32px 0; color:var(--ivory-dim);
+    font-size:12.5px; opacity:0.7; border-top:1px solid rgba(31,92,66,0.08);
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap nav">
+    <span class="brand">
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="navLeafGrad" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1F5C42"/>
+            <stop offset="100%" stop-color="#8FBF9F"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="150" r="14" fill="#B8934A"/>
+        <path d="M100 145 C 100 100, 70 70, 35 55 C 45 95, 65 125, 100 145 Z" fill="url(#navLeafGrad)"/>
+        <path d="M100 145 C 100 90, 135 60, 170 45 C 158 90, 135 122, 100 145 Z" fill="url(#navLeafGrad)" opacity="0.85"/>
+        <path d="M100 145 L100 60" stroke="#1F5C42" stroke-width="3" fill="none" opacity="0.5"/>
+      </svg>
+      <span>غرس</span>
+    </span>
+    <a href="index.html" class="back-link">→ باقي الباقات</a>
+  </div>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">🔥 غرس تبنيها لك</span>
+      <h1>نبنيلك منتجك الرقمي <span class="accent">وهويتك وموقعك</span> من الصفر</h1>
+      <p class="sub">ما عليك تتعلم ولا تصمم ولا تبرمج شي. تعطينا فكرتك، ونسلمك منتج جاهز يبيع — بهوية بصرية تخصك وموقع يوديك مباشرة للدفع.</p>
+
+      <div class="slots-note">🕐 عدد محدود شهريًا — تواصل معنا للتأكد من توفر مكان</div>
+
+      <div class="price-row">
+        <span class="price">$199</span>
+        <span class="price-unit">دفعة واحدة</span>
+      </div>
+
+      <div>
+        <a href="https://wa.me/963982983100" target="_blank" rel="noopener noreferrer" class="cta-btn">تواصل معنا للحجز</a>
+      </div>
+      <div class="cta-note">نرد عليك خلال ساعات، ونأكد لك موعد التسليم قبل أي التزام</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">هذي الخدمة لك إذا...</h2>
+      <p class="section-sub">وضحنا لمن تناسب، ولمن لا تناسب — عشان تقرر بثقة</p>
+
+      <div class="who-grid">
+        <div class="who-card yes">
+          <h3>✓ مناسبة لك لو</h3>
+          <ul>
+            <li><span>✓</span><span>عندك فكرة منتج رقمي بس ما تعرف تبدأ من وين</span></li>
+            <li><span>✓</span><span>وقتك محدود وتفضل توكل التنفيذ لجهة تثق فيها</span></li>
+            <li><span>✓</span><span>تبي تطلق بسرعة بدل ما تتعلم كل خطوة بنفسك</span></li>
+            <li><span>✓</span><span>تقدّر قيمة الوقت اللي توفره أكثر من التكلفة الإضافية</span></li>
+          </ul>
+        </div>
+        <div class="who-card no">
+          <h3>هذي مو الخيار الأنسب لو</h3>
+          <ul>
+            <li><span>–</span><span>تستمتع بتعلم كل التفاصيل بنفسك خطوة بخطوة</span></li>
+            <li><span>–</span><span>ميزانيتك محدودة جدًا حاليًا (جرب الباقة الأساسية أول)</span></li>
+            <li><span>–</span><span>ما عندك أي فكرة أو اتجاه عن مجال منتجك بعد</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">وش بتحصل عليه بالضبط</h2>
+      <p class="section-sub">كل شي جاهز، وما عليك إلا تنشر وتبدأ تبيع</p>
+
+      <div class="includes">
+        <div class="include-item">
+          <div class="include-icon">📦</div>
+          <div>
+            <h3>منتجك الرقمي كامل</h3>
+            <p>نبني لك المنتج نفسه من الصفر بناءً على فكرتك ومجالك — جاهز للبيع، مو مجرد قالب فاضي.</p>
+          </div>
+        </div>
+        <div class="include-item">
+          <div class="include-icon">🎨</div>
+          <div>
+            <h3>هوية بصرية أساسية</h3>
+            <p>اسم مقترح (أو تطوير اسمك الحالي)، لوحة ألوان متناسقة، وشعار بسيط يعطي مشروعك طابع احترافي من أول يوم.</p>
+          </div>
+        </div>
+        <div class="include-item">
+          <div class="include-icon">🌐</div>
+          <div>
+            <h3>موقع بيع (كتالوج) جاهز</h3>
+            <p>صفحة تعرض منتجك وتقنع الزائر، وتوديه مباشرة لصفحة الدفع — بدون ما تحتاج تصمم أو تبرمج أي شي.</p>
+          </div>
+        </div>
+        <div class="include-item">
+          <div class="include-icon">💬</div>
+          <div>
+            <h3>14 يوم دعم نصي مباشر</h3>
+            <p>بعد التسليم، تقدر تراسلنا عبر واتساب لأي تعديل بسيط أو سؤال يواجهك وأنت تبدأ.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">كيف تسير العملية</h2>
+      <p class="section-sub">من أول تواصل إلى استلام منتجك جاهزًا</p>
+
+      <div class="process">
+        <div class="process-step">
+          <span class="process-num">1</span>
+          <div>
+            <h3>تواصل معنا وتشاركنا فكرتك</h3>
+            <p>راسلنا عبر واتساب، احكِ لنا عن مجالك واهتماماتك — حتى لو الفكرة لسه مو واضحة تمامًا.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-num">2</span>
+          <div>
+            <h3>نبني منتجك وهويتك</h3>
+            <p>نصمم المنتج والهوية البصرية والموقع بناءً على اللي اتفقنا عليه، ونحدثك أول بأول.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="process-num">3</span>
+          <div>
+            <h3>تستلم كل شي جاهز</h3>
+            <p>تستلم منتجك وموقعك جاهزين تمامًا — ما عليك إلا تنشر وتبدأ تستقبل أول عملائك.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">أسئلة شائعة</h2>
+
+      <div class="faq-item">
+        <h3>ليش أدفع أكثر من الكورس نفسه؟</h3>
+        <p>الكورس يعلمك تسوي كل شي بنفسك خطوة بخطوة. هذي الخدمة نسويها لك مباشرة — توفر عليك الوقت والتعلم والتجربة، وتناسب لو تفضل التنفيذ السريع على التعلم التدريجي.</p>
+      </div>
+      <div class="faq-item">
+        <h3>كم تستغرق مدة التسليم؟</h3>
+        <p>تختلف حسب حجم الطلبات الحالية، بس نأكد لك موعد تسليم واضح قبل أي التزام منك — تعرف بالضبط متى بيوصلك منتجك.</p>
+      </div>
+      <div class="faq-item">
+        <h3>وش لو ما عندي فكرة منتج واضحة؟</h3>
+        <p>عادي، نساعدك نطور الفكرة سوا بناءً على مجالك واهتماماتك خلال أول تواصل — ما تحتاج توصل لنا بخطة جاهزة.</p>
+      </div>
+      <div class="faq-item">
+        <h3>هل فيه تعديلات بعد التسليم؟</h3>
+        <p>إي، عندك 14 يوم دعم نصي مباشر عبر واتساب بعد التسليم لأي تعديل بسيط أو استفسار.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>جاهز تخلي غرس يبنيها لك؟</h2>
+      <p class="sub">عدد الأماكن محدود شهريًا — تواصل معنا الحين للتأكد من توفر مكان.</p>
+      <div class="price-row" style="justify-content:center;">
+        <span class="price" style="font-size:40px;">$199</span>
+      </div>
+      <a href="https://wa.me/963982983100" target="_blank" rel="noopener noreferrer" class="cta-btn">تواصل معنا للحجز</a>
+    </div>
+  </section>
+
+  <footer>
+    منتج رقمي © غرس — جميع الحقوق محفوظة
+  </footer>
+
+</body>
+</html>
